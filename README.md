@@ -1,53 +1,59 @@
 # Exp_2_Simple-Spring-Boot-MVC-Application
 
-## AIM:
+### NAME: JANARTHANAN K
+### REG.NO.: 212223040072
+
+## AIM
+
 To develop a Simple Spring Boot MVC (Model-View-Controller) Application that uses a Controller to handle HTTP requests, a Model to pass data, and a View (Thymeleaf) to render dynamic HTML pages.
 
-## ALGORITHM:
-Create a New Spring Boot Project:
+## ALGORITHM
 
-Use Spring Initializr
+### 1. Create a New Spring Boot Project
+
+Use Spring Initializr.
 
 Add dependencies:
 
-Spring Web
+* Spring Web
+* Thymeleaf
 
-Thymeleaf
+### 2. Set Up Project Structure
 
-Set Up Project Structure:
+* Create the main class annotated with `@SpringBootApplication`
+* Create a Controller class using `@Controller`
+* Add HTML templates under `src/main/resources/templates`
 
-Create the main class annotated with @SpringBootApplication
+### 3. Create a Controller
 
-Create a Controller class using @Controller
+* Define a method to handle HTTP GET requests using `@GetMapping`
+* Return a view name (HTML page name) from the controller
+* Pass data to the view using `Model` object
 
-Add HTML templates under src/main/resources/templates
+### 4. Create a Model (Optional)
 
-Create a Controller:
+Define a simple POJO class if you need to pass structured data to the view.
 
-Define a method to handle HTTP GET requests using @GetMapping
+### 5. Create View Pages (HTML using Thymeleaf)
 
-Return a view name (HTML page name) from the controller
+* Create an HTML file inside the `templates` folder
+* Use Thymeleaf syntax (e.g., `${name}`) to render dynamic content
 
-Pass data to the view using Model object
+### 6. Run the Application
 
-Create a Model (Optional):
+Run the Spring Boot application from your IDE or command line.
 
-Define a simple POJO class if you need to pass structured data to the view
+### 7. Access the Application
 
-Create View Pages (HTML using Thymeleaf):
+Open a browser and navigate to:
 
-Create an HTML file inside the templates folder
+`http://localhost:8080/`
 
-Use Thymeleaf syntax (e.g., ${name}) to render dynamic content
-
-Run the Application:
-
-Run the Spring Boot application from your IDE or command line
-
-Access the Application:
-
-Open a browser and navigate to http://localhost:8080/
 ## PROGRAM
+
+### Project Structure
+
+```text
 spring-mvc-demo/
 ├── src/
 │   └── main/
@@ -60,9 +66,11 @@ spring-mvc-demo/
 │           │   └── index.html
 │           └── application.properties
 ├── pom.xml
+```
 
-### pom.xml :
+### pom.xml
 
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -94,9 +102,11 @@ spring-mvc-demo/
         </dependency>
     </dependencies>
 </project>
+```
 
-### MvcApplication.java (Main Class):
+### MvcApplication.java (Main Class)
 
+```java
 package com.example.mvc;
 
 import org.springframework.boot.SpringApplication;
@@ -108,9 +118,11 @@ public class MvcApplication {
         SpringApplication.run(MvcApplication.class, args);
     }
 }
+```
 
-### HomeController.java (Controller):
+### HomeController.java (Controller)
 
+```java
 package com.example.mvc;
 
 import org.springframework.stereotype.Controller;
@@ -126,8 +138,11 @@ public class HomeController {
         return "index";  // refers to index.html in templates folder
     }
 }
-### index.html (View – inside src/main/resources/templates/):
+```
 
+### index.html (View – inside src/main/resources/templates/)
+
+```html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -137,8 +152,17 @@ public class HomeController {
     <h1 th:text="${message}">Default Message</h1>
 </body>
 </html>
+```
 
-### application.properties:
- server.port=8081
+### application.properties
 
+```properties
+server.port=8081
+```
 
+### OUTPUT
+![Spring Boot MVC Application](https://github.com/user-attachments/assets/5325cfba-7c31-4fb7-b2e5-dd5b7eb81850)
+
+### RESULT
+
+Thus, the Simple Spring Boot MVC Application was successfully developed using a Controller, Model, and Thymeleaf View to handle HTTP requests and render dynamic HTML content.
